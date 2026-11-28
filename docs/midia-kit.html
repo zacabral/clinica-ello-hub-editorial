@@ -175,11 +175,24 @@
     </div>
 
     <!-- Deck Slide Controls -->
-    <div id="deckBar" class="max-w-6xl mx-auto px-4 sm:px-6 pb-3 flex flex-wrap items-center justify-between gap-2 text-xs">
-      <div class="flex flex-wrap items-center gap-1.5" id="slidePills"></div>
-      <div class="flex items-center gap-2">
+    <div id="deckBar" class="max-w-6xl mx-auto px-4 sm:px-6 pb-2 flex flex-col md:flex-row items-center justify-between gap-2 text-xs">
+      <!-- Desktop Pills (Oculto em Celulares) -->
+      <div class="hidden md:flex flex-wrap items-center gap-1.5" id="slidePills"></div>
+
+      <!-- Mobile Compact Single-Row Navigation (Ocupa apenas 36px no Celular) -->
+      <div class="flex md:hidden items-center justify-between w-full gap-2">
+        <button onclick="prevSlide()" class="px-3 py-1 rounded bg-[#0D1F38] border border-[#C5A059]/40 text-[#E2C382] font-mono font-bold active:scale-95">←</button>
+        <select id="mobileSlideSelect" onchange="goToSlide(Number(this.value))" class="flex-1 bg-[#0D1F38] text-[#E2C382] border border-[#C5A059]/40 rounded px-2.5 py-1 text-xs font-serif-luxury truncate focus:outline-none focus:border-[#C5A059]">
+          <!-- Populado via renderPills() -->
+        </select>
+        <span id="mobileSlideCounter" class="text-slate-400 font-mono text-xs tabular-nums px-1 whitespace-nowrap">01/10</span>
+        <button onclick="nextSlide()" class="px-3 py-1 rounded bg-[#0D1F38] border border-[#C5A059]/40 text-[#E2C382] font-mono font-bold active:scale-95">→</button>
+      </div>
+
+      <!-- Desktop Arrows (Oculto em Celulares) -->
+      <div class="hidden md:flex items-center gap-2">
         <button onclick="prevSlide()" class="px-2.5 py-1 rounded border border-[#C5A059]/30 text-slate-200 hover:border-[#C5A059] hover:text-white transition">← Anterior</button>
-        <span id="slideCounter" class="text-slate-400 font-mono tabular-nums px-1">01 / 08</span>
+        <span id="slideCounter" class="text-slate-400 font-mono tabular-nums px-1">01 / 10</span>
         <button onclick="nextSlide()" class="px-2.5 py-1 rounded border border-[#C5A059]/30 text-slate-200 hover:border-[#C5A059] hover:text-white transition">Próximo →</button>
       </div>
     </div>
@@ -465,6 +478,33 @@
           <p class="text-xs uppercase tracking-[0.24em] text-[#C5A059]">03 · Perfil Editorial &amp; Filosofia de Cuidado</p>
           <h2 class="font-serif-luxury text-2xl sm:text-3xl text-white mt-1">Da Origem ao Mundo — Ciência, Maturidade &amp; Beleza Interior</h2>
         </div>
+
+      <!-- Barra Nobre de Redirecionamentos Oficiais e Registros Verificáveis -->
+      <div class="surface-elevated rounded-xl p-3.5 border border-[#C5A059]/30 flex flex-wrap items-center justify-between gap-3 text-xs">
+        <span class="text-[#E2C382] font-semibold uppercase tracking-wider font-mono flex items-center gap-1.5">
+          <span>🔗</span> Canais Oficiais &amp; Plataformas Auditáveis:
+        </span>
+        <div class="flex flex-wrap items-center gap-2">
+          <a href="http://lattes.cnpq.br/1108813762997291" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-[#071324] hover:bg-[#C5A059]/20 border border-[#C5A059]/40 text-[#E2C382] transition flex items-center gap-1 font-mono">
+            🎓 Lattes CNPq ↗
+          </a>
+          <a href="https://drisaiascabral.com.br/" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-[#071324] hover:bg-white/10 border border-white/20 text-white transition flex items-center gap-1 font-mono">
+            🌐 drisaiascabral.com.br ↗
+          </a>
+          <a href="https://www.youtube.com/@drisaiascabral" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-[#071324] hover:bg-red-950/40 border border-red-500/40 text-red-300 transition flex items-center gap-1 font-mono">
+            ▶ YouTube (3.4k) ↗
+          </a>
+          <a href="https://www.instagram.com/drisaiascabral/" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-[#071324] hover:bg-pink-950/40 border border-pink-500/40 text-pink-300 transition flex items-center gap-1 font-mono">
+            📸 Instagram (23.1k) ↗
+          </a>
+          <a href="https://maps.google.com/?q=Dr.+Isaias+Cabral+Cirurgiao+Plastico+Governador+Valadares" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-[#071324] hover:bg-amber-950/40 border border-amber-500/40 text-amber-300 transition flex items-center gap-1 font-mono">
+            ⭐ Google Maps (204 · 5★) ↗
+          </a>
+          <a href="https://portal.cfm.org.br/busca-medicos/" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-[#071324] hover:bg-blue-950/40 border border-blue-500/40 text-blue-300 transition flex items-center gap-1 font-mono">
+            🩺 CFM / RQE 33.377 ↗
+          </a>
+        </div>
+      </div>
         <span class="badge-gold text-xs px-3 py-1 rounded-full">Autoridade Brand-Safe</span>
       </div>
 
@@ -900,6 +940,80 @@
         </div>
       </div>
 
+      <!-- Vitrines Modelo: 3 Rascunhos Iniciais de Pitch para Trabalho com a AURABR (Exemplos Não-Engessados) -->
+      <div class="space-y-3 pt-2">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-2">
+          <div>
+            <span class="text-xs font-semibold text-[#E2C382] uppercase tracking-wider font-mono">
+              Vitrines Modelo · 3 Rascunhos Iniciais de Pitch para Co-Criação com a AURABR
+            </span>
+            <p class="text-[11px] text-slate-400 mt-0.5">
+              Modelos ilustrativos de partida desenvolvidos para apoiar a agência na abordagem inicial. São referências flexíveis e não-engessadas, sem promessas comerciais fechadas.
+            </p>
+          </div>
+          <span class="badge-gold text-[10px] px-2.5 py-0.5 rounded-full font-mono">Exemplos Conceituais de Partida</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Pitch 1: Samsung & Google -->
+          <div class="p-4 rounded-xl bg-[#071324] border border-[#C5A059]/30 space-y-2 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between text-[10px] font-mono">
+                <span class="text-[#C5A059] font-bold">PITCH MODELO 01</span>
+                <span class="text-emerald-400">Tech &amp; Nuvem</span>
+              </div>
+              <h4 class="font-serif-luxury text-sm text-white font-bold">Google &amp; Samsung: "A Nova Caneta Médica"</h4>
+              <p class="text-[11px] text-slate-300 leading-relaxed">
+                <strong class="text-white">Dor do Setor:</strong> O médico perde horas em burocracia documental e sistemas lentos.<br>
+                <strong class="text-white">Conceito de Co-Criação:</strong> O Chromebook Corporativo e o Samsung Knox como instrumentos de trabalho ágil. Demonstração prática da rotina 100% paperless no consultório e bloco cirúrgico, devolvendo a atenção médica ao cuidado humano.
+              </p>
+            </div>
+            <div class="border-t border-white/5 pt-2 text-[10px] text-slate-400 flex items-center justify-between">
+              <span>Formato: Série Rotina 4K</span>
+              <span class="text-[#E2C382] font-mono font-medium">GOOGLE-SAMSUNG</span>
+            </div>
+          </div>
+
+          <!-- Pitch 2: Dispositivos Cirúrgicos / Endolaser / Energia -->
+          <div class="p-4 rounded-xl bg-[#071324] border border-[#144075]/60 space-y-2 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between text-[10px] font-mono">
+                <span class="text-blue-400 font-bold">PITCH MODELO 02</span>
+                <span class="text-purple-400">Dispositivos Médicos</span>
+              </div>
+              <h4 class="font-serif-luxury text-sm text-white font-bold">Tecnologias de Energia: Avaliação &amp; Retração Cutânea</h4>
+              <p class="text-[11px] text-slate-300 leading-relaxed">
+                <strong class="text-white">Dor do Setor:</strong> Apelos sensacionalistas de "resultados milagrosos" em redes sociais.<br>
+                <strong class="text-white">Conceito de Co-Criação:</strong> Avaliação anatômica e independente de plataformas térmicas e subdérmicas (laser/plasma) para retração tecidual, com protocolo de segurança ONA Nível 3, bioética e acompanhamento científico sob o CFM nº 2.336/2023.
+              </p>
+            </div>
+            <div class="border-t border-white/5 pt-2 text-[10px] text-slate-400 flex items-center justify-between">
+              <span>Formato: Masterclass &amp; Artigo</span>
+              <span class="text-blue-400 font-mono font-medium">MED-ENERGY</span>
+            </div>
+          </div>
+
+          <!-- Pitch 3: CBEXS & Liderança em Saúde -->
+          <div class="p-4 rounded-xl bg-[#071324] border border-emerald-500/30 space-y-2 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between text-[10px] font-mono">
+                <span class="text-emerald-400 font-bold">PITCH MODELO 03</span>
+                <span class="text-[#E2C382]">Governança &amp; ESG</span>
+              </div>
+              <h4 class="font-serif-luxury text-sm text-white font-bold">CBEXS: Liderança Médica &amp; Interiorização da Gestão</h4>
+              <p class="text-[11px] text-slate-300 leading-relaxed">
+                <strong class="text-white">Dor do Setor:</strong> Concentração da alta gestão em capitais e carência de governança no interior.<br>
+                <strong class="text-white">Conceito de Co-Criação:</strong> Acompanhamento da formação executiva avançada (CBEXS) e aplicação de governança clínica no Leste Mineiro, com fomento institucional irrestrito de marcas patrocinadoras com compromisso social e ESG.
+              </p>
+            </div>
+            <div class="border-t border-white/5 pt-2 text-[10px] text-slate-400 flex items-center justify-between">
+              <span>Formato: Podcast &amp; Cobertura</span>
+              <span class="text-emerald-400 font-mono font-medium">CBEXS-LEADERSHIP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Caixa de Governança para Agência e Marcas -->
       <div class="surface-elevated rounded-xl p-5 flex flex-wrap items-center justify-between gap-4 border border-[#C5A059]/30">
         <div class="space-y-1.5 max-w-3xl">
@@ -914,55 +1028,134 @@
       </div>
     </section>
 
-<section class="portfolio-section slide-card rounded-2xl p-8 sm:p-11 shadow-2xl space-y-7" data-title="08. Calendário 2027">
+<section class="portfolio-section slide-card rounded-2xl p-8 sm:p-11 shadow-2xl space-y-7" data-title="08. Programas & Eventos">
       <div class="flex flex-wrap items-end justify-between gap-4 border-b border-[#C5A059]/20 pb-5">
         <div>
-          <p class="text-xs uppercase tracking-[0.24em] text-[#C5A059]">08 · Calendário Real 2027 (Local → Regional → Nacional)</p>
-          <h2 class="font-serif-luxury text-2xl sm:text-3xl text-white mt-1">Vitrines Confirmáveis em Temporadas Equilibradas</h2>
+          <p class="text-xs uppercase tracking-[0.24em] text-[#C5A059]">08 · Maturação de Programas &amp; Calendário de Eventos Elegíveis</p>
+          <h2 class="font-serif-luxury text-2xl sm:text-3xl text-white mt-1">Planejamento em Fases Estratégicas &amp; Agenda de Congressos</h2>
+          <p class="text-xs text-slate-400 mt-1">Distinção entre etapas de maturação de conteúdo (curto, médio e longo prazo) e eventos presenciais elegíveis para cotas de patrocínio corporativo.</p>
         </div>
-        <span class="badge-gold text-xs px-3 py-1 rounded-full">Ciclos Intercalados de Produção</span>
+        <span class="badge-gold text-xs px-3 py-1 rounded-full font-mono">Viabilização 100% por Patrocínio · Recursos Próprios Preservados</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5">
-        <div class="surface-elevated rounded-xl p-4 space-y-1.5 border-t-2 border-t-[#C5A059]">
-          <div class="flex justify-between text-xs"><span class="font-mono text-[#C5A059]">JAN–FEV 2027</span><span class="text-slate-400">Local</span></div>
-          <h3 class="font-serif-luxury text-base text-white">Raízes &amp; Futuro</h3>
-          <p class="text-xs text-slate-300">Gravação piloto (Frei Inocêncio → Governador Valadares), ativação do Podcast Beleza Interior e início do piloto comercial 90d.</p>
+      <!-- BLOCO A: CRONOGRAMA DE PROGRAMAS & PILOTOS (POR MATURAÇÃO / SEM DATAS RÍGIDAS) -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between border-b border-white/10 pb-2">
+          <span class="text-xs font-semibold text-[#E2C382] uppercase tracking-wider font-mono flex items-center gap-1.5">
+            <span>📅</span> Bloco A · Maturação de Programas &amp; Pilotos de Mídia (Sem Datas Fixas de Início)
+          </span>
+          <span class="text-[10px] text-slate-400 font-mono">Fases Condicionadas à Abertura dos Projetos</span>
         </div>
-        <div class="surface-elevated rounded-xl p-4 space-y-1.5 border-t-2 border-t-[#C5A059]">
-          <div class="flex justify-between text-xs"><span class="font-mono text-[#C5A059]">17–19 MAR 2027</span><span class="text-slate-400">Nacional · RJ</span></div>
-          <h3 class="font-serif-luxury text-base text-white">IV KIC Saúde (Fiocruz)</h3>
-          <p class="text-xs text-slate-300">Palco de inovação em saúde, governança digital e ponte entre interior e tecnologia de ponta.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- FASE 1: CURTO PRAZO -->
+          <div class="surface-elevated rounded-xl p-4.5 space-y-2.5 border-t-2 border-t-[#C5A059] flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex justify-between items-center text-xs">
+                <span class="badge-gold text-[10px] px-2 py-0.5 rounded-full font-mono uppercase">Fase 1 · Curto Prazo</span>
+                <span class="text-emerald-400 font-mono text-[11px]">0 a 90 dias</span>
+              </div>
+              <h3 class="font-serif-luxury text-base text-white font-bold">Piloto de Conteúdo Ativo &amp; Rotina Clínica</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Ativação da produção cinematográfica 4K com a Konstrua Visual; gravação dos primeiros episódios do <em>Podcast Beleza Interior</em>; resenhas técnicas editoriais em blog proprietário e integração orgânica de marcas na rotina do consultório (<code class="text-[10px] text-[#C5A059]">GOVAL</code>).
+              </p>
+            </div>
+            <div class="border-t border-white/5 pt-2 text-[10px] text-slate-400">
+              Objetivo: Validação de fluxo editorial e consolidação de audiência qualificada.
+            </div>
+          </div>
+
+          <!-- FASE 2: MÉDIO PRAZO -->
+          <div class="surface-elevated rounded-xl p-4.5 space-y-2.5 border-t-2 border-t-[#144075] flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex justify-between items-center text-xs">
+                <span class="badge-gold text-[10px] px-2 py-0.5 rounded-full font-mono uppercase">Fase 2 · Médio Prazo</span>
+                <span class="text-blue-400 font-mono text-[11px]">3 a 6 meses</span>
+              </div>
+              <h3 class="font-serif-luxury text-base text-white font-bold">Série Documental 4K &amp; Showcases Tecnológicos</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Produção da série documental modular de bastidores cirúrgicos (padrão streaming SBCP/ISAPS); ativação do showcase de tecnologia de baixo atrito ("A Nova Caneta Médica") e testes comparativos de biofísica tecidual com painéis multidisciplinares.
+              </p>
+            </div>
+            <div class="border-t border-white/5 pt-2 text-[10px] text-slate-400">
+              Objetivo: Escala de autoridade de marca e atração de cotas de temporada.
+            </div>
+          </div>
+
+          <!-- FASE 3: LONGO PRAZO -->
+          <div class="surface-elevated rounded-xl p-4.5 space-y-2.5 border-t-2 border-t-[#E2C382] flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex justify-between items-center text-xs">
+                <span class="badge-gold text-[10px] px-2 py-0.5 rounded-full font-mono uppercase">Fase 3 · Longo Prazo</span>
+                <span class="text-[#E2C382] font-mono text-[11px]">6 a 12 meses</span>
+              </div>
+              <h3 class="font-serif-luxury text-base text-white font-bold">Enciclopédia Médica &amp; Ciência Financiada (CEP)</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Co-criação com editoras médicas mundiais para enciclopédia médica aberta multilíngue; viabilização de ensaios clínicos translacionais com fomento institucional irrestrito via CEP/CONEP e submissões a prêmios nacionais de inovação e ESG em saúde.
+              </p>
+            </div>
+            <div class="border-t border-white/5 pt-2 text-[10px] text-slate-400">
+              Objetivo: Perenidade acadêmica, legado científico e chancela internacional.
+            </div>
+          </div>
         </div>
-        <div class="surface-elevated rounded-xl p-4 space-y-1.5 border-t-2 border-t-[#C5A059]">
-          <div class="flex justify-between text-xs"><span class="font-mono text-[#C5A059]">ABR 2027</span><span class="text-slate-400">Regional · MG/ES</span></div>
-          <h3 class="font-serif-luxury text-base text-white">Circuito Podcasts &amp; ESG</h3>
-          <p class="text-xs text-slate-300">Entrevistas regionais, encontros universitários e ativação de frente social/científica com marcas.</p>
+      </div>
+
+      <!-- BLOCO B: CALENDÁRIO DE EVENTOS ELEGÍVEIS PARA CAPTAÇÃO DE PATROCÍNIO -->
+      <div class="space-y-3 pt-2">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-2">
+          <div>
+            <span class="text-xs font-semibold text-[#E2C382] uppercase tracking-wider font-mono flex items-center gap-1.5">
+              <span>🏛️</span> Bloco B · Eventos &amp; Congressos Oficiais Elegíveis para Co-Investimento de Marca
+            </span>
+            <p class="text-[11px] text-slate-400 mt-0.5">
+              Agendas técnicas onde o Dr. Isaias e sua equipe de produção têm interesse em atuar com cobertura documental e ativação de marca, <strong>desde que viabilizadas por cotas de patrocínio corporativo</strong>.
+            </p>
+          </div>
+          <span class="badge-ready text-[10px] px-2.5 py-0.5 rounded-full font-mono">Sob Demanda de Captação</span>
         </div>
-        <div class="surface-elevated rounded-xl p-4 space-y-1.5 border-t-2 border-t-[#C5A059]">
-          <div class="flex justify-between text-xs"><span class="font-mono text-[#C5A059]">18–21 MAI 2027</span><span class="text-slate-400">Nacional · SP</span></div>
-          <h3 class="font-serif-luxury text-base text-white">Hospitalar 2027</h3>
-          <p class="text-xs text-slate-300">Agenda com executivos de saúde/tecnologia, demonstração de governança clínica e captação de parceiros.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
+          <div class="surface-elevated rounded-xl p-3.5 space-y-1 border-t-2 border-t-[#C5A059]">
+            <span class="font-mono text-[#C5A059] text-[10px] uppercase">Formação Executiva</span>
+            <h4 class="font-serif-luxury text-sm text-white font-bold">CBEXS · PMA</h4>
+            <p class="text-[11px] text-slate-300">Programa de Mentoria Avançada em Liderança e Governança em Saúde (São Paulo/SP).</p>
+          </div>
+          <div class="surface-elevated rounded-xl p-3.5 space-y-1 border-t-2 border-t-[#C5A059]">
+            <span class="font-mono text-[#C5A059] text-[10px] uppercase">Feira Hospitalar</span>
+            <h4 class="font-serif-luxury text-sm text-white font-bold">Hospitalar SP</h4>
+            <p class="text-[11px] text-slate-300">Encontro de líderes, tecnologias clínicas, infraestrutura hospitalar e inovação em saúde.</p>
+          </div>
+          <div class="surface-elevated rounded-xl p-3.5 space-y-1 border-t-2 border-t-[#144075]">
+            <span class="font-mono text-[#C5A059] text-[10px] uppercase">Cirurgia Plástica</span>
+            <h4 class="font-serif-luxury text-sm text-white font-bold">Jornada Paulista / SBCP</h4>
+            <p class="text-[11px] text-slate-300">Congresso Brasileiro da SBCP e Jornada Paulista: debates científicos e casuística cirúrgica.</p>
+          </div>
+          <div class="surface-elevated rounded-xl p-3.5 space-y-1 border-t-2 border-t-[#144075]">
+            <span class="font-mono text-[#C5A059] text-[10px] uppercase">Tecnologia &amp; IA</span>
+            <h4 class="font-serif-luxury text-sm text-white font-bold">Web Summit / Fiocruz</h4>
+            <p class="text-[11px] text-slate-300">Painéis de Inteligência Artificial, telemetria clínica e ecossistemas de saúde digital.</p>
+          </div>
+          <div class="surface-elevated rounded-xl p-3.5 space-y-1 border-t-2 border-t-[#E2C382]">
+            <span class="font-mono text-[#C5A059] text-[10px] uppercase">Internacional</span>
+            <h4 class="font-serif-luxury text-sm text-white font-bold">ISAPS / ASPS Global</h4>
+            <p class="text-[11px] text-slate-300">Intercâmbio com centros de excelência mundiais em contorno corporal e mamas.</p>
+          </div>
         </div>
-        <div class="surface-elevated rounded-xl p-4 space-y-1.5 border-t-2 border-t-[#144075]">
-          <div class="flex justify-between text-xs"><span class="font-mono text-[#C5A059]">14–17 JUN 2027</span><span class="text-slate-400">Global · RJ</span></div>
-          <h3 class="font-serif-luxury text-base text-white">Web Summit Rio 2027</h3>
-          <p class="text-xs text-slate-300">Vitrine de IA em saúde, networking com marcas globais, <em>collabs</em> educativas e cobertura documental.</p>
+      </div>
+
+      <!-- TRAVA DE GOVERNANÇA FIDUCIÁRIA -->
+      <div class="surface-elevated rounded-xl p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4 border border-[#C5A059]/40 bg-[#071324]/90">
+        <div class="space-y-1 max-w-3xl">
+          <p class="text-xs uppercase tracking-widest text-[#E2C382] font-semibold flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-[#C5A059]"></span> Princípio de Governança Fiduciária &amp; Independência Institucional
+          </p>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            A participação em congressos externos, viagens da equipe de filmagem e produção de estandes presenciais <strong>dependem exclusivamente da viabilização por cotas de patrocínio corporativo e fomento de marcas parceiras</strong>. A Clínica Ello preserva integralmente seu orçamento assistencial, não alocando recursos clínicos próprios para financiar agendas de mídia ou eventos.
+          </p>
         </div>
-        <div class="surface-elevated rounded-xl p-4 space-y-1.5 border-t-2 border-t-[#144075]">
-          <div class="flex justify-between text-xs"><span class="font-mono text-[#C5A059]">04–07 AGO 2027</span><span class="text-slate-400">Nacional</span></div>
-          <h3 class="font-serif-luxury text-base text-white">37º Congresso CBC</h3>
-          <p class="text-xs text-slate-300">Rigores científicos, segurança do paciente e intercâmbio com cirurgiões de todo o país.</p>
-        </div>
-        <div class="surface-elevated rounded-xl p-4 space-y-1.5 border-t-2 border-t-[#144075]">
-          <div class="flex justify-between text-xs"><span class="font-mono text-[#C5A059]">SET–OUT 2027</span><span class="text-slate-400">Prêmios/Editais</span></div>
-          <h3 class="font-serif-luxury text-base text-white">Premiações 2027</h3>
-          <p class="text-xs text-slate-300">Submissões com métricas consolidadas (Prêmio Péter Murányi, CNI/SEBRAE, Google for Startups, FAPEMIG/FINEP).</p>
-        </div>
-        <div class="surface-elevated rounded-xl p-4 space-y-1.5 border-t-2 border-t-[#144075]">
-          <div class="flex justify-between text-xs"><span class="font-mono text-[#C5A059]">NOV 2027</span><span class="text-slate-400">Ápice · Nacional</span></div>
-          <h3 class="font-serif-luxury text-base text-white">Congresso SBCP 2027</h3>
-          <p class="text-xs text-slate-300">Apresentação científica da Metanálise em Contorno Corporal e encerramento da temporada anual.</p>
+        <div class="flex items-center gap-2">
+          <span class="text-[11px] font-mono text-amber-400 bg-amber-950/60 border border-amber-500/30 px-3 py-1.5 rounded-lg">Fomento 100% Externo</span>
         </div>
       </div>
     </section>
@@ -1140,12 +1333,20 @@ Meu segmento / principais produtos são: [Ex.: suplementação, vestuário, hosp
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs leading-relaxed">
         <div class="surface-elevated rounded-xl p-5 space-y-2">
           <p class="uppercase tracking-widest text-[#C5A059] font-semibold">1. Identidade Canônica &amp; Fontes Oficiais de Busca</p>
-          <ul class="space-y-1.5 text-slate-200">
-            <li><strong>Grafia Oficial (Registro Civil):</strong> <strong>Dr. Isaias Vieira Cabral</strong> <em>(grafado sem acento gráfico em "Isaias")</em></li>
-            <li><strong>Registros Oficiais:</strong> CRM-MG 49.269 · RQE 33.376 (Cirurgia Geral) · RQE 33.377 (Cirurgia Plástica) · Membro Titular SBCP</li>
-            <li><strong>Currículo Lattes (CNPq):</strong> <code>lattes.cnpq.br/1108813762997291</code></li>
-            <li><strong>Web &amp; Redes Oficiais:</strong> <code>drisaiascabral.com.br</code> · Instagram/YouTube/TikTok <code>@drisaiascabral</code> · Facebook <code>/drisaiascirurgiaplastica</code></li>
-            <li><strong>Consulta Pública:</strong> Portal CFM (<code>portal.cfm.org.br/busca-medicos</code>), Portal SBCP, Doctoralia e Google Maps Governador Valadares/MG (+200 avaliações 5★).</li>
+          <ul class="space-y-2 text-slate-200">
+            <li><strong>Grafia Oficial (Registro Civil):</strong> <strong>Dr. Isaias Vieira Cabral</strong> <em>(grafado sem acento em "Isaias")</em></li>
+            <li><strong>Registros Médicos Oficiais:</strong> <a href="https://portal.cfm.org.br/busca-medicos/" target="_blank" rel="noopener" class="underline hover:text-[#E2C382] font-mono transition">CRM-MG 49.269 · RQE 33.376 (Cirurgia Geral) · RQE 33.377 (Cirurgia Plástica) · Membro Titular SBCP ↗</a></li>
+            <li><strong>Currículo Lattes (CNPq):</strong> <a href="http://lattes.cnpq.br/1108813762997291" target="_blank" rel="noopener" class="underline hover:text-[#E2C382] font-mono transition">lattes.cnpq.br/1108813762997291 ↗</a></li>
+            <li><strong>Website Oficial:</strong> <a href="https://drisaiascabral.com.br/" target="_blank" rel="noopener" class="underline hover:text-[#E2C382] font-mono transition">drisaiascabral.com.br ↗</a></li>
+            <li><strong>Canais Sociais Oficiais:</strong>
+              <div class="flex flex-wrap gap-2 mt-1">
+                <a href="https://www.youtube.com/@drisaiascabral" target="_blank" rel="noopener" class="px-2 py-0.5 rounded bg-white/5 hover:bg-red-950/40 border border-white/10 text-red-300 font-mono text-[11px] transition">YouTube @drisaiascabral ↗</a>
+                <a href="https://www.instagram.com/drisaiascabral/" target="_blank" rel="noopener" class="px-2 py-0.5 rounded bg-white/5 hover:bg-pink-950/40 border border-white/10 text-pink-300 font-mono text-[11px] transition">Instagram @drisaiascabral ↗</a>
+                <a href="https://www.tiktok.com/@drisaiascabral" target="_blank" rel="noopener" class="px-2 py-0.5 rounded bg-white/5 hover:bg-cyan-950/40 border border-white/10 text-cyan-300 font-mono text-[11px] transition">TikTok @drisaiascabral ↗</a>
+                <a href="https://www.facebook.com/drisaiascirurgiaplastica" target="_blank" rel="noopener" class="px-2 py-0.5 rounded bg-white/5 hover:bg-blue-950/40 border border-white/10 text-blue-300 font-mono text-[11px] transition">Facebook ↗</a>
+              </div>
+            </li>
+            <li><strong>Consulta Pública &amp; Prova Social:</strong> <a href="https://maps.google.com/?q=Dr.+Isaias+Cabral+Cirurgiao+Plastico+Governador+Valadares" target="_blank" rel="noopener" class="underline text-amber-300 hover:text-amber-200 transition font-mono">Google Maps (+204 avaliações 5★ auditadas) ↗</a> · <a href="https://portal.cfm.org.br/busca-medicos/" target="_blank" rel="noopener" class="underline text-slate-300 hover:text-white transition font-mono">Portal CFM / SBCP ↗</a></li>
           </ul>
         </div>
 
@@ -1187,18 +1388,38 @@ Meu segmento / principais produtos são: [Ex.: suplementação, vestuário, hosp
 
     function renderPills() {
       const container = document.getElementById('slidePills');
-      container.innerHTML = '';
-      slides.forEach((sec, idx) => {
-        const btn = document.createElement('button');
-        btn.textContent = sec.dataset.title;
-        btn.className = idx === currentSlide
-          ? 'px-2.5 py-1 rounded-md bg-[#C5A059]/25 border border-[#C5A059] text-[#E2C382] font-medium transition'
-          : 'px-2.5 py-1 rounded-md bg-transparent border border-transparent text-slate-400 hover:text-white hover:border-[#C5A059]/30 transition';
-        btn.onclick = () => goToSlide(idx);
-        container.appendChild(btn);
-      });
-      document.getElementById('slideCounter').textContent =
-        String(currentSlide + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+      const mobileSelect = document.getElementById('mobileSlideSelect');
+      if (container) {
+        container.innerHTML = '';
+        slides.forEach((sec, idx) => {
+          const btn = document.createElement('button');
+          btn.textContent = sec.dataset.title;
+          btn.className = idx === currentSlide
+            ? 'px-2.5 py-1 rounded-md bg-[#C5A059]/25 border border-[#C5A059] text-[#E2C382] font-medium transition'
+            : 'px-2.5 py-1 rounded-md bg-transparent border border-transparent text-slate-400 hover:text-white hover:border-[#C5A059]/30 transition';
+          btn.onclick = () => goToSlide(idx);
+          container.appendChild(btn);
+        });
+      }
+      if (mobileSelect) {
+        mobileSelect.innerHTML = '';
+        slides.forEach((sec, idx) => {
+          const opt = document.createElement('option');
+          opt.value = idx;
+          opt.textContent = sec.dataset.title;
+          if (idx === currentSlide) opt.selected = true;
+          mobileSelect.appendChild(opt);
+        });
+        mobileSelect.value = currentSlide;
+      }
+      const counter = document.getElementById('slideCounter');
+      if (counter) {
+        counter.textContent = String(currentSlide + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+      }
+      const mobCounter = document.getElementById('mobileSlideCounter');
+      if (mobCounter) {
+        mobCounter.textContent = String(currentSlide + 1).padStart(2, '0') + '/' + String(slides.length).padStart(2, '0');
+      }
     }
 
     function goToSlide(idx) {
