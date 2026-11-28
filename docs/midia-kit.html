@@ -159,6 +159,11 @@
       </div>
 
       <div class="flex flex-wrap items-center gap-2">
+        <!-- Botão Rápido: Salto Direto para Análise com IA (Slide 10) -->
+        <button onclick="goToSlide(9)" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-[#C5A059] to-[#E2C382] hover:brightness-110 text-[#071324] transition shadow flex items-center gap-1.5 active:scale-95" title="Salto direto para o Prompt Executivo de IA (Aba 10)">
+          <span>✨</span> <span class="font-bold">Analisar com IA</span>
+        </button>
+
         <div class="inline-flex rounded-lg p-0.5 bg-[#0D1F38] border border-[#C5A059]/25 text-xs">
           <button id="btnModeDeck" onclick="setMode('deck')" class="px-3 py-1.5 rounded-md font-medium transition bg-[#C5A059] text-[#071324]">
             Modo Apresentação (Call)
@@ -224,7 +229,7 @@
             </p>
             <div class="flex flex-wrap gap-2 pt-1 text-xs">
               <span class="surface-elevated px-3 py-1.5 rounded-lg text-slate-200">Lattes CNPq: <strong class="text-white font-mono">1108813762997291</strong></span>
-              <span class="surface-elevated px-3 py-1.5 rounded-lg text-slate-200">Google Maps: <strong class="text-white">+200 avaliações 5★</strong></span>
+              <span class="surface-elevated px-3 py-1.5 rounded-lg text-slate-200">Google Maps: <strong class="text-white">204 avaliações (Média 5,0★)</strong></span>
               <span class="surface-elevated px-3 py-1.5 rounded-lg text-slate-200">Filosofia: <strong class="text-white">Excelência com Humanidade</strong></span>
             </div>
           </div>
@@ -390,7 +395,7 @@
         <div class="surface-elevated rounded-xl p-3.5 space-y-1 border-t-2 border-t-amber-400">
           <p class="text-[11px] text-slate-400 uppercase tracking-wider">Reputação Máxima</p>
           <p class="text-2xl font-serif-luxury text-white font-bold">5,0 ★★★★★</p>
-          <p class="text-[10px] text-slate-300">204 Google Maps + 13 Doctoralia (Consulta em 26/11/2026)</p>
+          <p class="text-[10px] text-slate-300">204 avaliações no Google Maps (Média 5,0★) + 13 no Doctoralia (5,0★)</p>
         </div>
       </div>
 
@@ -497,11 +502,14 @@
           <a href="https://www.instagram.com/drisaiascabral/" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-[#071324] hover:bg-pink-950/40 border border-pink-500/40 text-pink-300 transition flex items-center gap-1 font-mono">
             📸 Instagram (23.1k) ↗
           </a>
-          <a href="https://maps.google.com/?q=Dr.+Isaias+Cabral+Cirurgiao+Plastico+Governador+Valadares" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-[#071324] hover:bg-amber-950/40 border border-amber-500/40 text-amber-300 transition flex items-center gap-1 font-mono">
-            ⭐ Google Maps (204 · 5★) ↗
+          <a href="https://maps.google.com/?q=Dr.+Isaias+Cabral+Cirurgiao+Plastico+Governador+Valadares" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-[#071324] hover:bg-amber-950/40 border border-amber-500/40 text-amber-300 transition flex items-center gap-1 font-mono" title="204 avaliações públicas auditadas no Google Maps (Média 5,0★)">
+            ⭐ Google Maps (204 avaliações · Média 5,0★) ↗
           </a>
-          <a href="https://portal.cfm.org.br/busca-medicos/" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-[#071324] hover:bg-blue-950/40 border border-blue-500/40 text-blue-300 transition flex items-center gap-1 font-mono">
-            🩺 CFM / RQE 33.377 ↗
+          <a href="https://portal.cfm.org.br/busca-medicos/" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-[#071324] hover:bg-blue-950/40 border border-blue-500/40 text-blue-300 transition flex items-center gap-1 font-mono" title="Consulta pública oficial CFM / CRM-MG 49.269">
+            🩺 CFM · RQE 33.377 / 33.376 ↗
+          </a>
+          <a href="http://www2.cirurgiaplastica.org.br/encontre-um-cirurgiao/" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-[#071324] hover:bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 transition flex items-center gap-1 font-mono" title="Membro Titular da Sociedade Brasileira de Cirurgia Plástica">
+            🏛️ SBCP · Membro Titular ↗
           </a>
         </div>
       </div>
@@ -783,7 +791,7 @@
               <em>"A Nova Caneta Médica"</em>: eliminação do papel, prontuários ágeis em nuvem e IA aplicada ao planejamento clínico. Integração de hardware corporativo ultrafino e segurança biométrica para devolver o tempo do médico ao contato humano.
             </p>
             <div class="p-2 rounded-lg bg-[#071324] border border-white/5 text-[10px] text-slate-300">
-              <strong class="text-[#C5A059]">Marcas com Fit:</strong> Google Cloud, Samsung Knox, Chromebook, Dell XPS, softwares clínicos.
+              <strong class="text-[#C5A059]">Exemplos de Referência:</strong> Google Cloud, Apple, Samsung Knox, Chromebook Enterprise, Dell XPS, softwares clínicos.
             </div>
           </div>
           <div class="border-t border-white/5 pt-2 text-[10px] text-slate-400 flex items-center justify-between">
@@ -804,7 +812,7 @@
               Elegância discreta e funcional: camisaria sob medida em linho nobre italiano e algodão egípcio para consultório e congressos mundiais. No bloco, vestuário cirúrgico de alta precisão com nanotecnologia e íons de prata (<code class="text-xs text-[#C5A059]">#0A192F</code>).
             </p>
             <div class="p-2 rounded-lg bg-[#071324] border border-white/5 text-[10px] text-slate-300">
-              <strong class="text-blue-400">Marcas com Fit:</strong> Zegna, Loro Piana, Dudalina, Osklen; marcas de scrubs de alta tecnologia.
+              <strong class="text-blue-400">Exemplos de Referência:</strong> Ermenegildo Zegna, Loro Piana, Dudalina, Osklen, Brooksfield; marcas de scrubs cirúrgicos com íons de prata.
             </div>
           </div>
           <div class="border-t border-white/5 pt-2 text-[10px] text-slate-400 flex items-center justify-between">
@@ -825,7 +833,7 @@
               Bioquímica tecidual e cicatrização: consumo e respaldo a insumos com pureza certificada internacionalmente (Creatina Creapure, peptídeos de colágeno Verisol/Bodybalance, Ômega-3 certificado IFOS e hidratação eletrolítica).
             </p>
             <div class="p-2 rounded-lg bg-[#071324] border border-white/5 text-[10px] text-slate-300">
-              <strong class="text-[#E2C382]">Marcas com Fit:</strong> Dux Nutrition, Essential, Puravida, laboratórios magistrais de alta precisão.
+              <strong class="text-[#E2C382]">Exemplos de Referência:</strong> Dux Nutrition, Essential Nutrition, Puravida, Max Titanium; laboratórios magistrais de alta precisão.
             </div>
           </div>
           <div class="border-t border-white/5 pt-2 text-[10px] text-slate-400 flex items-center justify-between">
@@ -846,7 +854,7 @@
               Monitoramento biométrico contínuo de um cirurgião de alta exigência: variabilidade da frequência cardíaca (HRV), estágios de sono profundo/REM, modulação da fadiga circadiana e colchões ergonômicos ortopédicos para regeneração mitocondrial.
             </p>
             <div class="p-2 rounded-lg bg-[#071324] border border-white/5 text-[10px] text-slate-300">
-              <strong class="text-emerald-400">Marcas com Fit:</strong> Samsung Galaxy Watch, Oura, Whoop; colchões ergonômicos de alta densidade.
+              <strong class="text-emerald-400">Exemplos de Referência:</strong> Apple Watch Ultra, Samsung Galaxy Watch, Oura Ring, Whoop, Garmin; colchões ergonômicos ortopédicos.
             </div>
           </div>
           <div class="border-t border-white/5 pt-2 text-[10px] text-slate-400 flex items-center justify-between">
@@ -909,7 +917,7 @@
               Deslocamento inteligente e seguro: habitáculo com filtragem de ar hospitalar e condução assistida para rotas intermunicipais (GOVAL–FINO). Aviação executiva e hotelaria de alto padrão para congressos nacionais e imersões acadêmicas globais.
             </p>
             <div class="p-2 rounded-lg bg-[#071324] border border-white/5 text-[10px] text-slate-300">
-              <strong class="text-amber-400">Marcas com Fit:</strong> Volvo, Porsche, Tesla; aviação executiva regional e hotelaria corporativa de luxo.
+              <strong class="text-amber-400">Exemplos de Referência:</strong> Volvo, Porsche, BMW, Mercedes-Benz, Tesla; aviação executiva regional e hotelaria corporativa de luxo.
             </div>
           </div>
           <div class="border-t border-white/5 pt-2 text-[10px] text-slate-400 flex items-center justify-between">
@@ -940,12 +948,19 @@
         </div>
       </div>
 
-      <!-- Vitrines Modelo: 3 Rascunhos Iniciais de Pitch para Trabalho com a AURABR (Exemplos Não-Engessados) -->
+            <!-- Nota de Não-Exclusividade e Referências Abertas de Mercado -->
+      <div class="p-3.5 rounded-xl bg-[#071324]/80 border border-[#C5A059]/20 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-300">
+        <p class="leading-relaxed">
+          <strong class="text-[#E2C382]">Critério de Não-Exclusividade &amp; Benchmarks de Excelência:</strong> As marcas citadas nas verticais e rascunhos de pitch representam exclusivamente <em>referências de padrão de qualidade e posicionamento de mercado (benchmarks)</em>. A marca pessoal Dr. Isaias Vieira Cabral não possui contrato de exclusividade prévia fechado, estando aberta a co-criações institucionais com players líderes de cada segmento (seja Apple, Google ou Samsung; Zegna ou Loro Piana; BMW, Porsche ou Volvo).
+        </p>
+      </div>
+
+      <!-- Vitrines Conceituais: 3 Rascunhos Iniciais de Pitch para Agências & Marcas Patrocinadoras -->
       <div class="space-y-3 pt-2">
         <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-2">
           <div>
             <span class="text-xs font-semibold text-[#E2C382] uppercase tracking-wider font-mono">
-              Vitrines Modelo · 3 Rascunhos Iniciais de Pitch para Co-Criação com a AURABR
+              Vitrines Conceituais · 3 Rascunhos Iniciais de Pitch para Agências & Marcas Patrocinadoras
             </span>
             <p class="text-[11px] text-slate-400 mt-0.5">
               Modelos ilustrativos de partida desenvolvidos para apoiar a agência na abordagem inicial. São referências flexíveis e não-engessadas, sem promessas comerciais fechadas.
@@ -1019,7 +1034,7 @@
         <div class="space-y-1.5 max-w-3xl">
           <p class="text-xs uppercase tracking-widest text-[#C5A059] font-semibold">Como Funciona a Co-Criação Institucional &amp; Aliança de Marca</p>
           <p class="text-xs text-slate-300 leading-relaxed">
-            As marcas são integradas por meio de <strong>projetos customizados</strong> desenhados pela agência parceira (AURABR), respeitando o posicionamento do patrocinador e o ecossistema do criador. Escopos detalhados, cronogramas de entrega e orçamentos específicos são emitidos individualmente sob medida após alinhamento de briefing, com total conformidade ao CONAR e à Resolução CFM nº 2.336/2023.
+            As marcas são integradas por meio de <strong>projetos customizados</strong> desenhados em colaboração com a agência de curadoria e relações institucionais, respeitando o posicionamento do patrocinador e o ecossistema do criador. Escopos detalhados, cronogramas de entrega e orçamentos específicos são emitidos individualmente sob medida após alinhamento de briefing, com total conformidade ao CONAR e à Resolução CFM nº 2.336/2023.
           </p>
         </div>
         <div class="flex items-center gap-2">
@@ -1302,7 +1317,7 @@ Sua missão é realizar um Diagnóstico Estratégico de Sinergia entre a MINHA E
 --- ACERVO OFICIAL & DADOS AUDITADOS DO DR. ISAIAS CABRAL ---
 - Mídia Kit Oficial Interativo (Web): https://zacabral.github.io/clinica-ello-hub-editorial/
 - Documento de Referência: Anexo 'portfolio_midia_kit_dr_isaias_2027.html' (recebido por e-mail oficial).
-- Reputação & Avaliações: Mais de 204 avaliações 5.0 estrelas auditadas no Google Maps (nota máxima); 39.400+ seguidores orgânicos qualificados; mais de 142.000 contas alcançadas por mês.
+- Reputação & Avaliações: 204 avaliações públicas no Google Maps com nota média 5,0★ auditada (+13 no Doctoralia 5,0★); 39.400+ seguidores orgânicos qualificados; mais de 142.000 contas alcançadas por mês.
 - Credenciais Médicas Reais: Membro Titular SBCP, Mestre, Preceptor de Residência Médica em Cirurgia Plástica (Hospital Bom Samaritano), Diretor Técnico da Clínica Ello (Governador Valadares/MG e Frei Inocêncio/MG).
 - Padrão Audiovisual: Vídeos cinematográficos em 4K produzidos pela Konstrua Visual, cenografia Quiet Luxury, Podcast "Beleza Interior", sem sensacionalismo ou apelos comerciais agressivos.
 - Blindagem Jurídica & Ética: 100% aderente à Resolução CFM nº 2.336/2023, CONAR e LGPD (sem promessas de resultado, sem mercantilização, foco estrito em educação em saúde, estilo de vida e ciência de precisão).
@@ -1327,7 +1342,7 @@ Meu segmento / principais produtos são: [Ex.: suplementação, vestuário, hosp
    - Proposta 1: Ativação em Rotina Real / Bastidores de Alta Performance (Uso orgânico e documentado com fundamentação técnica).
    - Proposta 2: Episódio Temático no Podcast "Beleza Interior" ou Série Documental Educativa em 4K.
    - Proposta 3: Ativação Institucional / Co-Branding de Autoridade (Conteúdo científico, showcase corporativo ou whitepaper).
-4. MENSAGEM EXECUTIVA DE CONTATO: Elabore uma mensagem executiva pronta para ser enviada por e-mail à produção executiva do Dr. Isaias (AURABR / Renato Konstrua: konstruavisualmktmedico@gmail.com) para solicitar o detalhamento da proposta selecionada.</textarea>
+4. MENSAGEM EXECUTIVA DE CONTATO: Elabore uma mensagem executiva pronta para ser enviada por e-mail à produção executiva do Dr. Isaias (Produção Executiva / Renato Konstrua: konstruavisualmktmedico@gmail.com) para solicitar o detalhamento da proposta selecionada.</textarea>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs leading-relaxed">
@@ -1346,7 +1361,7 @@ Meu segmento / principais produtos são: [Ex.: suplementação, vestuário, hosp
                 <a href="https://www.facebook.com/drisaiascirurgiaplastica" target="_blank" rel="noopener" class="px-2 py-0.5 rounded bg-white/5 hover:bg-blue-950/40 border border-white/10 text-blue-300 font-mono text-[11px] transition">Facebook ↗</a>
               </div>
             </li>
-            <li><strong>Consulta Pública &amp; Prova Social:</strong> <a href="https://maps.google.com/?q=Dr.+Isaias+Cabral+Cirurgiao+Plastico+Governador+Valadares" target="_blank" rel="noopener" class="underline text-amber-300 hover:text-amber-200 transition font-mono">Google Maps (+204 avaliações 5★ auditadas) ↗</a> · <a href="https://portal.cfm.org.br/busca-medicos/" target="_blank" rel="noopener" class="underline text-slate-300 hover:text-white transition font-mono">Portal CFM / SBCP ↗</a></li>
+            <li><strong>Consulta Pública &amp; Prova Social:</strong> <a href="https://maps.google.com/?q=Dr.+Isaias+Cabral+Cirurgiao+Plastico+Governador+Valadares" target="_blank" rel="noopener" class="underline text-amber-300 hover:text-amber-200 transition font-mono">Google Maps (204 avaliações públicas · Nota Média 5,0★ auditada) ↗</a> · <a href="https://portal.cfm.org.br/busca-medicos/" target="_blank" rel="noopener" class="underline text-slate-300 hover:text-white transition font-mono">Portal CFM (RQE 33.377) ↗</a> · <a href="http://www2.cirurgiaplastica.org.br/encontre-um-cirurgiao/" target="_blank" rel="noopener" class="underline text-emerald-300 hover:text-emerald-200 transition font-mono">SBCP (Membro Titular) ↗</a></li>
           </ul>
         </div>
 
@@ -1356,7 +1371,7 @@ Meu segmento / principais produtos são: [Ex.: suplementação, vestuário, hosp
             <li><strong>Posicionamento:</strong> Autoridade cirúrgica verificada (SBCP), Cultura de Informação e Busca da Beleza Interior, raízes mineiras/paraibanas com retorno à origem e vivência de paternidade recente.</li>
             <li><strong>Verticais de Maior Fit:</strong> Finanças/bancos digitais, educação digital, tecnologia/wearables, equipamentos clínicos (com independência científica), vestuário nobre, nutrição limpa, mobilidade, família e bem-estar.</li>
             <li><strong>Compliance &amp; Governança:</strong> Operação aderente à Resolução CFM nº 2.336/2023, CONAR e LGPD (segregação entre marca pessoal e prática assistencial; ciência patrocinada via CEP/CONEP).</li>
-            <li><strong>Modelo de Colaboração:</strong> Aliança participativa orientada a projetos e temporadas de co-criação institucional sob curadoria da AURABR.</li>
+            <li><strong>Modelo de Colaboração:</strong> Aliança participativa orientada a projetos e temporadas de co-criação institucional sob curadoria da agência parceira de relações institucionais.</li>
           </ul>
         </div>
 
@@ -1423,11 +1438,18 @@ Meu segmento / principais produtos são: [Ex.: suplementação, vestuário, hosp
     }
 
     function goToSlide(idx) {
-      slides[currentSlide].classList.remove('active-slide');
-      currentSlide = (idx + slides.length) % slides.length;
-      slides[currentSlide].classList.add('active-slide');
-      renderPills();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (document.body.classList.contains('mode-deck')) {
+        slides[currentSlide].classList.remove('active-slide');
+        currentSlide = (idx + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active-slide');
+        renderPills();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const target = slides[idx];
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
     }
 
     function nextSlide() { goToSlide(currentSlide + 1); }
